@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScamLens — scam message checker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">S</span> ScamLens</div>
+  <nav>
+    <button data-tab="scan" class="active">Scan</button>
+    <button data-tab="history">History</button>
+  </nav>
+  <div id="status-badge" class="badge" title="Backend status">…</div>
+</header>
+
+<main>
+  <!-- SCAN -->
+  <section id="tab-scan" class="tab active">
+    <div class="disclaimer" role="note">
+      <b>Advisory only.</b> ScamLens gives an advisory opinion, not legal or financial advice.
+      When in doubt, verify through the official channel and report fraud at
+      <b>cybercrime.gov.in</b>.
+    </div>
+
+    <div class="card">
+      <h2>Check a message</h2>
+      <textarea id="scan-input" rows="7"
+        placeholder="Paste a suspicious message or call transcript…"></textarea>
+      <div class="scan-row">
+        <div class="lang-toggle" role="group" aria-label="Explanation language">
+          <button type="button" data-lang="en" class="active">EN</button>
+          <button type="button" data-lang="ta">தமிழ்</button>
+        </div>
+        <button id="scan-btn">Scan</button>
+      </div>
+    </div>
+
+    <div id="result" class="card result hidden"></div>
+  </section>
+
+  <!-- HISTORY -->
+  <section id="tab-history" class="tab">
+    <h2>Scan history</h2>
+    <p id="history-count" class="muted"></p>
+    <div id="history-list" class="history-list"></div>
+  </section>
+</main>
+
+<div id="toast" class="toast hidden" role="alert"></div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
